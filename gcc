@@ -1,0 +1,1 @@
+sudo gcc -o v65x1 v65x1.c -lX11 -lwiringPi
