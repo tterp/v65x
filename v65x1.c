@@ -166,7 +166,32 @@ char buffer[80];
 		XFillRectangle(dpy, win, DefaultGC(dpy, screen), 64, 0, 64, 53);
    }
 }
-  
+ if (keysym == XK_b)
+		{
+	 XSetForeground(dpy, DefaultGC(dpy, screen), black.pixel);
+		XFillRectangle(dpy, win, DefaultGC(dpy, screen), 64, 54, 64, 53);
+	XSetForeground(dpy, DefaultGC(dpy, screen), red.pixel);
+		XFillRectangle(dpy, win, DefaultGC(dpy, screen), 64, 54, 64, 53);
+	
+		XSetForeground(dpy, DefaultGC(dpy, screen), white.pixel);
+        XFillRectangle(dpy, win, DefaultGC(dpy, screen), 82, 66, 9, 3);
+        XFillRectangle(dpy, win, DefaultGC(dpy, screen), 102, 66, 9, 3);
+        XFillRectangle(dpy, win, DefaultGC(dpy, screen), 76, 69, 40, 3);
+        XFillRectangle(dpy, win, DefaultGC(dpy, screen), 76, 69, 3, 25);
+        XFillRectangle(dpy, win, DefaultGC(dpy, screen), 114, 69, 3, 25);
+        XFillRectangle(dpy, win, DefaultGC(dpy, screen), 76, 92, 40, 3);
+        XFillRectangle(dpy, win, DefaultGC(dpy, screen), 83, 78, 8, 2);
+        XFillRectangle(dpy, win, DefaultGC(dpy, screen), 105, 75, 2, 8);
+        XFillRectangle(dpy, win, DefaultGC(dpy, screen), 102, 78, 8, 2);
+        printf("tast b\n");
+
+  if ((keysym == XK_b) && (event.type == KeyRelease))
+		
+		{
+      XSetForeground(dpy, DefaultGC(dpy, screen), black.pixel);
+		XFillRectangle(dpy, win, DefaultGC(dpy, screen), 64, 54, 64, 53);
+   }
+} 
 
 /* XComposeStatus compose; is not used, though it's in some books */
 /*   count = XLookupString(event2,buffer,buffer_size, &keysym);
