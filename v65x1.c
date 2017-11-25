@@ -318,12 +318,147 @@ char buffer[80];
                   XDrawLine(dpy, win, DefaultGC(dpy, screen), 63, 81, 65, 83);
                   XDrawLine(dpy, win, DefaultGC(dpy, screen), 64, 81, 65, 82);
                   
-		          XFillRectangle(dpy, win, DefaultGC(dpy, screen), 64, 50, 60, 60);
+		          XFillRectangle(dpy, win, DefaultGC(dpy, screen), 64, 56, 60, 50);
 		          
                   
                   printf("tast l\n");
 
         if ((keysym == XK_l) && (event.type == KeyRelease))
+			   {
+                  XSetForeground(dpy, DefaultGC(dpy, screen), black.pixel);
+		          XFillRectangle(dpy, win, DefaultGC(dpy, screen), 0, 0, 128, 160);
+               }
+}
+if (keysym == XK_h)
+		        {
+	              XSetForeground(dpy, DefaultGC(dpy, screen), black.pixel);
+		          XFillRectangle(dpy, win, DefaultGC(dpy, screen), 0, 0, 128, 160);
+	              XSetForeground(dpy, DefaultGC(dpy, screen), green.pixel);
+	              XFillRectangle(dpy, win, DefaultGC(dpy, screen), 5, 56, 60, 50);
+		          XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 21, 124, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 22, 123, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 23, 122, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 24, 121, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 25, 120, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 26, 119, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 27, 118, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 28, 117, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 29, 116, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 30, 115, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 31, 114, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 32, 113, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 33, 112, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 34, 111, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 35, 110, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 36, 109, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 37, 108, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 38, 107, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 39, 106, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 40, 105, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 41, 104, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 42, 103, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 43, 102, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 44, 101, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 45, 100, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 46, 99, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 47, 98, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 48, 97, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 49, 96, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 50, 95, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 51, 94, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 52, 93, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 53, 92, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 54, 91, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 55, 90, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 56, 89, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 57, 88, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 58, 87, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 59, 86, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 60, 85, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 61, 84, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 62, 83, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 63, 82, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 64, 81, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 65, 80, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 66, 79, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 67, 78, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 68, 77, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 69, 76, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 70, 75, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 71, 74, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 72, 73, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 73, 72, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 74, 71, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 75, 70, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 76, 69, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 77, 68, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 78, 67, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 79, 66, 80);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 80, 65, 80);
+           
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 81, 65, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 82, 66, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 83, 67, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 84, 68, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 85, 69, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 86, 70, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 87, 71, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 88, 72, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 89, 73, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 90, 74, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 91, 75, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 92, 76, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 93, 77, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 94, 78, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 95, 79, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 96, 80, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 97, 81, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 98, 82, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 99, 83, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 100, 84, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 101, 85, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 102, 86, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 103, 87, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 104, 88, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 105, 89, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 106, 90, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 107, 91, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 108, 92, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 109, 93, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 110, 94, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 111, 95, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 112, 96, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 113, 97, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 114, 98, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 115, 99, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 116, 100, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 117, 101, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 118, 102, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 119, 103, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 120, 104, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 121, 105, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 122, 106, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 123, 107, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 124, 108, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 125, 109, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 126, 110, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 127, 111, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 128, 112, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 129, 113, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 130, 114, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 131, 115, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 132, 116, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 133, 117, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 134, 118, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 135, 119, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 136, 120, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 137, 121, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 138, 122, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 139, 123, 81);
+                  XDrawLine(dpy, win, DefaultGC(dpy, screen), 65, 140, 124, 81);
+                  printf("tast h\n");
+
+        if ((keysym == XK_h) && (event.type == KeyRelease))
 			   {
                   XSetForeground(dpy, DefaultGC(dpy, screen), black.pixel);
 		          XFillRectangle(dpy, win, DefaultGC(dpy, screen), 0, 0, 128, 160);
