@@ -1,28 +1,28 @@
 #include <stdio.h>
 #include <X11/Xlib.h>
 #include <wiringPi.h>
-#include "/usr/include/X11/keysymdef.h"
-#include "/usr/include/X11/keysym.h"
+#include <X11/keysymdef.h>
+#include <X11/keysym.h>
 #include <unistd.h>
 
-#include "/home/pi/v65GPIO/highbeam.h"
-#include "/home/pi/v65GPIO/lowbeam.h"
-#include "/home/pi/v65GPIO/battery.h"
+#include "/home/pi/v65x/highbeam.h"
+#include "/home/pi/v65x/lowbeam.h"
+#include "/home/pi/v65x/battery.h"
 
 #define BlackColor  black.pixel
 #define GreenColor  green.pixel
 #define WhiteColor  white.pixel
 #define BlueColor   blue.pixel
 #define RedColor    red.pixel
-#define OFF 0  
-#define ON 1 
+#define OFF 0
+#define ON 1
 
 
    Display *dpy;
 	int screen;
     Window win;
     XEvent event;
-    KeySym keysym;   
+    KeySym keysym;
     int count;
 int buffer_size = 80;
 char buffer[80];
@@ -52,12 +52,12 @@ int main (int argc, char *argv[])
 
     dpy = XOpenDisplay(NULL);
     screen = DefaultScreen(dpy);
-    
+
     win = XCreateSimpleWindow(dpy, RootWindow(dpy, screen), 0, 0, 128, 160, 0, BlackPixel(dpy, screen), BlackPixel(dpy, screen));
     XSelectInput(dpy, win, ExposureMask | KeyReleaseMask);
     XMapWindow(dpy, win);
-    
-    
+
+
         Colormap screen_colormap;     // color map to use for allocating colors.
         XColor red, blue, green, white, black;
         screen_colormap = DefaultColormap(dpy, DefaultScreen(dpy));
@@ -66,21 +66,20 @@ int main (int argc, char *argv[])
         XAllocNamedColor(dpy, screen_colormap, "red", &red, &red);
         XAllocNamedColor(dpy, screen_colormap, "white", &white, &white);
 		XAllocNamedColor(dpy, screen_colormap, "black", &black, &black);
-		
-    
- 
+
+
   while(1)
-{   
+{
         // XSendEvent(dpy, win, TRUE,KeyReleaseMask, XK_a == KeyRelease);
 	 XNextEvent(dpy, &event);
 		if (digitalRead(0)==0)// && (kortlys == 0))
 				{
-					
-					LowBeam(BlackColor, GreenColor, WhiteColor);
+
+		LowBeam(BlackColor, GreenColor, WhiteColor);
 				//delay(1);
                     //kortlys = 1;
                  }
-        
+
        else if ((digitalRead(0)==1) && (digitalRead(7)==1))
 			   {
                  XSetForeground(dpy, DefaultGC(dpy, screen), black.pixel);
@@ -113,10 +112,5 @@ int main (int argc, char *argv[])
 }
 
 }
-      
-        
-
-
-    
 
 
