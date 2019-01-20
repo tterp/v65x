@@ -6,9 +6,9 @@
     void Battery(unsigned int black, unsigned int red, unsigned int white)
     {
 		          XSetForeground(dpy, DefaultGC(dpy, screen), black);
-		          XFillRectangle(dpy, win, DefaultGC(dpy, screen), 64, 54, 64, 53);
+		          XFillRectangle(dpy, win, DefaultGC(dpy, screen), 64, 64, 64, 64);
 	              XSetForeground(dpy, DefaultGC(dpy, screen), red);
-		          XFillRectangle(dpy, win, DefaultGC(dpy, screen), 64, 54, 64, 53);
+		          XFillRectangle(dpy, win, DefaultGC(dpy, screen), 64, 64, 64, 64);
 	              XSetForeground(dpy, DefaultGC(dpy, screen), white);
                   XFillRectangle(dpy, win, DefaultGC(dpy, screen), 82, 66, 9, 3);
                   XFillRectangle(dpy, win, DefaultGC(dpy, screen), 102, 66, 9, 3);

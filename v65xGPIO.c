@@ -8,6 +8,10 @@
 #include "/home/pi/v65x/highbeam.h"
 #include "/home/pi/v65x/lowbeam.h"
 #include "/home/pi/v65x/battery.h"
+#include "/home/pi/v65x/leftturn.h"
+#include "/home/pi/v65x/rightturn.h"
+#include "/home/pi/v65x/neutral.h"
+#include "/home/pi/v65x/oil.h"
 
 #define BlackColor  black.pixel
 #define GreenColor  green.pixel
@@ -17,20 +21,21 @@
 #define OFF 0
 #define ON 1
 
+static unsigned int Pause = 0, x = 0, y = 0, xspeed = 1, yspeed = 2;
 
-   Display *dpy;
-	int screen;
+    Display *dpy;
+    int screen;
     Window win;
     XEvent event;
     KeySym keysym;
     int count;
-int buffer_size = 80;
-char buffer[80];
+    int buffer_size = 80;
+    char buffer[80];
     Status status;
     int len;
     int buf_len = 10;
     char string[25];
-   static unsigned int kortlys = 0;
+
 
 int main (int argc, char *argv[])
 {
@@ -53,7 +58,7 @@ int main (int argc, char *argv[])
     dpy = XOpenDisplay(NULL);
     screen = DefaultScreen(dpy);
 
-    win = XCreateSimpleWindow(dpy, RootWindow(dpy, screen), 0, 0, 128, 160, 0, BlackPixel(dpy, screen), BlackPixel(dpy, screen));
+    win = XCreateSimpleWindow(dpy, RootWindow(dpy, screen), 0, 0, 128, 128, 0, BlackPixel(dpy, screen), BlackPixel(dpy, screen));
     XSelectInput(dpy, win, ExposureMask | KeyReleaseMask);
     XMapWindow(dpy, win);
 
@@ -70,44 +75,74 @@ int main (int argc, char *argv[])
 
   while(1)
 {
-        // XSendEvent(dpy, win, TRUE,KeyReleaseMask, XK_a == KeyRelease);
-	 XNextEvent(dpy, &event);
-		if (digitalRead(0)==0)// && (kortlys == 0))
-				{
 
-		LowBeam(BlackColor, GreenColor, WhiteColor);
-				//delay(1);
-                    //kortlys = 1;
-                 }
-
-       else if ((digitalRead(0)==1) && (digitalRead(7)==1))
-			   {
-                 XSetForeground(dpy, DefaultGC(dpy, screen), black.pixel);
-	             XFillRectangle(dpy, win, DefaultGC(dpy, screen), 0, 0, 64, 53);
-	             //kortlys = OFF;
-	             //delay(500);
-               }
-
-        if  (digitalRead(7)==0)
-               {
-                  HighBeam(BlackColor, BlueColor, WhiteColor);
-        }
-
-        else if ((digitalRead(7)==1) && (digitalRead(0)==1))
-        {
+ 	 XNextEvent(dpy, &event);
+         Pause += 1;
          XSetForeground(dpy, DefaultGC(dpy, screen), black.pixel);
-         XFillRectangle(dpy, win, DefaultGC(dpy, screen), 0, 0, 64, 53);
-}
+         XFillRectangle(dpy, win, DefaultGC(dpy, screen), 0, 0, 128, 128);
 
-        if (digitalRead(21)==0)
-            {
-              Battery(BlackColor, RedColor, WhiteColor);
-            }
-         else if (digitalRead(21)==1)
-           {
-           XSetForeground(dpy, DefaultGC(dpy, screen), black.pixel);
-           XFillRectangle(dpy, win, DefaultGC(dpy, screen), 64, 54 ,64, 53);
-	}
+                 if (digitalRead(21)==0)
+                                {
+                                  Battery(BlackColor, RedColor, WhiteColor);
+                                  Pause = 0;
+                                }
+
+                 if (digitalRead(22)==0)
+                                {
+                                  Neutral(BlackColor, GreenColor, WhiteColor);
+                                  Pause = 0;
+                                }
+                 if (digitalRead(23)==0)
+                                {
+                                  Oil(BlackColor, RedColor, WhiteColor);
+                                  Pause = 0;
+                                }
+
+
+
+                if ((digitalRead(0)==1) && (digitalRead(7)==0))
+                                {
+                                 // Pause = 0;
+                                }
+                if ((digitalRead(7)==1) && (digitalRead(0)==0))
+                                {
+                                 // Pause = 0;
+                                }
+
+
+
+                if ((digitalRead(0)==0) && (Pause < 8))
+				{
+        		LowBeam(BlackColor, GreenColor, WhiteColor, 0, 0);
+	                		                }
+                if ((digitalRead(0)==0) && (Pause > 8))
+                                {
+                                 LowBeam(BlackColor, GreenColor, WhiteColor, x, y);
+                                 }
+                if ((digitalRead(7)==0) && (Pause < 8))
+				{
+        		HighBeam(BlackColor, BlueColor, WhiteColor, 0, 0);
+	                		                }
+                if ((digitalRead(7)==0) && (Pause > 8))
+                                {
+                                 HighBeam(BlackColor, BlueColor, WhiteColor, x, y);
+                                 }
+
+
+
+
+           x += xspeed;
+           y += yspeed;
+
+           if (y > 63 || y < 0)
+                  {
+                    yspeed *= -1;
+                  }
+
+           if (x > 63 || x < 0)
+                  {
+                    xspeed *= -1;
+                  }
 
 }
 
