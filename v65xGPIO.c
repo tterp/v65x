@@ -100,13 +100,15 @@ int main (int argc, char *argv[])
 
 
 
-                if ((digitalRead(0)==1) && (digitalRead(7)==0))
+                if (digitalRead(2)==0)
                                 {
-                                 // Pause = 0;
+                                 LeftTurn(BlackColor, GreenColor);
+                                 Pause = 0;
                                 }
-                if ((digitalRead(7)==1) && (digitalRead(0)==0))
+                if (digitalRead(3)==0)
                                 {
-                                 // Pause = 0;
+                                 RightTurn(BlackColor, GreenColor);
+                                 Pause = 0;
                                 }
 
 
